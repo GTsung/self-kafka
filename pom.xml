@@ -14,6 +14,7 @@
         <module>self-kafka-consumer</module>
         <module>self-kfk-consumer</module>
         <module>self-kfk-consumer-nonblock</module>
+        <module>self-kfk-ttl</module>
     </modules>
 
     <properties>
