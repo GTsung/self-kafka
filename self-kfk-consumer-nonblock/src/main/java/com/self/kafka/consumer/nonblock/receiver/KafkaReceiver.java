@@ -53,6 +53,7 @@ public class KafkaReceiver {
     }
 
     // 最终重试全部失败后，进入到死信队列
+    // 死信队列的分区数一般不低于原topic, DeadLetterPublishingRecoverer
     @DltHandler
     public void handleDlt(@Payload String failedMessage,
                           @Header(KafkaHeaders.ORIGINAL_TOPIC) String originalTopic,

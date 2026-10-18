@@ -43,6 +43,7 @@ public class ExpiryAwareConsumer {
         processBusiness(record.value(), ack);
     }
 
+    // 死信队列的分区数不低于原topic
     private void sendToDlt(ConsumerRecord<String, String> originalRecord, String reason) {
         try {
             // 将原始消息转发到 DLT，建议保留原始 key/value，并添加失败原因 Header
