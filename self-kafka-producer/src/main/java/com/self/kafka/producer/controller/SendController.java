@@ -24,4 +24,9 @@ public class SendController {
         kafkaSender.send(kfkProperties.getTopic(), value);
     }
 
+    @GetMapping("sendNonblock")
+    public void sendNonblock(@RequestParam(name = "value") String value) {
+        kafkaSender.send(kfkProperties.getNonblockTopic(), value);
+    }
+
 }

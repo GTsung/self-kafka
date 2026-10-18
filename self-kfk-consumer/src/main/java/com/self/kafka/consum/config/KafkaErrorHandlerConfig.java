@@ -2,7 +2,6 @@ package com.self.kafka.consum.config;
 
 import com.self.kafka.consum.domain.KafkaFailedMessageDO;
 import com.self.kafka.consum.mapper.KafkaFailedMessageMapper;
-import com.self.kafka.consum.utils.JsonUtil;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -32,7 +31,7 @@ public class KafkaErrorHandlerConfig {
                             .topic(record.topic())
                             .partition(record.partition())
                             .offset(record.offset())
-                            .value(JsonUtil.toJson(record.value()))
+                            .value(record.value() == null ? null : record.value().toString())
                             .errorMsg(exception.getMessage())
                             .build();
                     kafkaFailedMessageMapper.insert(failed);

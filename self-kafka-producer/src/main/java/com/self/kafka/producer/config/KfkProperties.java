@@ -11,4 +11,7 @@ public class KfkProperties {
     @Value("${kafka.topic:}")
     private String topic;
 
+    @Value("${kafka.nonblock.topic}")
+    private String nonblockTopic;
+
 }

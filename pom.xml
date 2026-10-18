@@ -13,6 +13,7 @@
         <module>self-kafka-producer</module>
         <module>self-kafka-consumer</module>
         <module>self-kfk-consumer</module>
+        <module>self-kfk-consumer-nonblock</module>
     </modules>
 
     <properties>
